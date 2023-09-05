@@ -1,0 +1,41 @@
+.container{
+  background-image: linear-gradient(rgba(7, 25, 82, 1), rgba(7, 25, 82, 0.5)), url('../../public/starsbg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 0 50px;
+  min-height: 650px;
+  height: calc(100vh - 70px);
+}
+.welcomeMessage{
+ font-size: 7rem;
+ font-weight: bolder;
+ letter-spacing: -5px;
+ line-height: 160px;
+ text-shadow: 0 0 20px var(--medium-green),0 0 60px var(--medium-green);
+ transition: all 0.3s ease-in-out;
+}
+.welcomeMessage:hover{
+  cursor: default;
+  text-shadow: 0 0 50px var(--medium-green), 0 0 60px var(--medium-green), 0 0 70px var(--medium-green);
+}
+.paragraphRow{
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+.welcomeParagraph{
+  font-size: 2em;
+  line-height: 40px;
+  padding-left: 15px;
+  border-left: 1px dashed;
+}
+.image{
+  width: 450px;
+  height: 250px;
+}
+.textContainer{
+ max-width: 1200px;
+ color: white;
+ margin: 0 auto;
+ padding: 40px;
+}

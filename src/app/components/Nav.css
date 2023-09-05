@@ -1,0 +1,47 @@
+.nav-container{
+  background-color: var(--deep-blue);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  font-size: 1.2rem;
+}
+.nav-element{
+  display: flex;
+}
+.nav-links>a{
+  margin-right: 30px;
+  transition: text-shadow 0.2s ease-in-out;
+}
+.nav-links>a:hover{
+  text-shadow: 0 0 10px var(--medium-green), 0 0 20px var(--medium-green), 0 0 30px var(--medium-green);
+}
+.nav-lang>div{
+  margin-left: 10px;
+}
+.lang-button{
+  display: flex;
+  transition: text-shadow 0.2s ease-in-out;
+}
+.lang-button:hover{
+  cursor: pointer;
+  text-shadow: 0 0 10px var(--medium-green), 0 0 20px var(--medium-green), 0 0 30px var(--medium-green);
+}
+.image-icon{
+  width: 35px;
+  height: 25px;
+  margin: 0 5px;
+}
+.mx{
+  background: url('../../../public/mx.svg');
+  background-repeat: no-repeat;
+}
+.us{
+  background: url('../../../public/us.svg');
+  background-repeat: no-repeat;
+}
+.selected{
+  color: var(--light-green);
+  border-bottom: 2px solid var(--light-green);
+  text-shadow: 0 0 10px var(--medium-green), 0 0 20px var(--medium-green), 0 0 30px var(--medium-green);
+}
