@@ -26,5 +26,33 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.title-decorated{
+  font-weight: bolder;
+  line-height: 160px;
+  text-shadow: 0 0 20px var(--medium-green),0 0 60px var(--medium-green);
+  transition: all 0.3s ease-in-out;
+  cursor: default;
+}
+.title-decorated:hover{
+  cursor: default;
+  text-shadow: 0 0 50px var(--medium-green), 0 0 60px var(--medium-green), 0 0 70px var(--medium-green);
+}
+.title-white{
+  color: white;
+}
+.title-huge{ 
+  font-size: 7rem;
+  letter-spacing: -5px;
+}
+.title-big{ 
+  font-size: 4.5rem;
+  letter-spacing: -3px;
+}
+.title-centered{
+  text-align: center;
+}
 
+.bg-deep-blue{
+  background-color: var(--deep-blue);
+}
 

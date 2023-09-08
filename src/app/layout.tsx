@@ -1,10 +1,11 @@
 import './globals.css'
+import homestyles from './home.module.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
 
 import NavBar from './components/NavBar'
-
-const inter = Inter({ subsets: ['latin'] })
+import LanguageContext from './context/LanguageContext'
 
 export const metadata: Metadata = {
   title: 'Portafolio de Daniel',
@@ -16,11 +17,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar/>
-        {children}
+        <LanguageContext>
+          <NavBar/>
+          {children}
+        </LanguageContext>
       </body>
     </html>
   )
