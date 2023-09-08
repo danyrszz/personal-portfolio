@@ -1,11 +1,16 @@
 'use client'
+import { useGlobalLanguage } from '../context/LanguageContext'
 
 import './projects.css'
 
 export default function Projects() {
+
+  const {language} = useGlobalLanguage()
   return (
     <>
-    <div className='title-big title-white title-decorated title-centered bg-deep-blue'> Mis proyectos. </div>
+    <div className='title-big title-white title-decorated title-centered bg-deep-blue'>
+      {language === 'EN' ? titleEn : titleEs}
+    </div>
     <section className="projects-container">
       <div className='card'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim veniam sequi nisi officia animi dolor optio perspiciatis similique ad quia inventore ea, vitae odio nostrum libero tempora voluptatum dolorem id!
@@ -27,3 +32,6 @@ export default function Projects() {
     </>
   )
 }
+
+const titleEs : string = 'Mis Proyectos.'
+const titleEn : string = 'My Projects.'

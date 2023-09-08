@@ -1,10 +1,9 @@
 .container{
   background-image: linear-gradient(rgba(7, 25, 82, 1), rgba(7, 25, 82, 0.5)), url('../../public/starsbg.jpg');
   background-size: cover;
-  background-position: center;
   padding: 0 50px;
-  min-height: 650px;
-  height: calc(100vh - 70px);
+  display: flex;
+  flex-grow: 1; /* i'd spent a lot of time trying to fix overflowing and height to be fullscreen and this did the trick :) */
 }
 .welcomeMessage:hover{
   cursor: default;

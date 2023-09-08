@@ -1,6 +1,6 @@
 
 .projects-container{
-  margin: 0 auto;
+  margin: 20px auto 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -9,8 +9,34 @@
 
 .card{
   width: 48%;
+  height: 400px;
   margin:1%;
-  outline: 1px solid white;
+  outline: 1px solid red;
   background-color: white;
   border-radius: 10px;
+}
+
+@media screen and (max-width : 960px) {
+  .projects-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .card{
+    width: 576px;
+  }
+}
+
+@media screen and (max-width : 600px) {
+  .card{
+    width: 400px;
+  }
+}
+
+@media screen and (max-width : 500px) {
+  .projects-container{
+    margin: 20px;
+  }
+  .card{
+    width: 100%;
+  }
 }
