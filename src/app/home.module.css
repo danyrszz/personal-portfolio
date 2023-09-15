@@ -5,6 +5,10 @@
   display: flex;
   flex-grow: 1; /* i'd spent a lot of time trying to fix overflowing and height to be fullscreen and this did the trick :) */
 }
+.welcomeMessage{
+  font-size: 7rem;
+  letter-spacing: -5px;
+}
 .welcomeMessage:hover{
   cursor: default;
   text-shadow: 0 0 50px var(--medium-green), 0 0 60px var(--medium-green), 0 0 70px var(--medium-green);
@@ -21,12 +25,52 @@
   border-left: 1px dashed;
 }
 .image{
-  width: 450px;
-  height: 250px;
+  max-width: 450px;
+  max-height: 250px;
 }
 .textContainer{
  max-width: 1200px;
  color: white;
  margin: 0 auto;
  padding: 40px;
+}
+
+@media screen and (max-width:1200px) {
+  .textContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width:1080px) {
+  .welcomeMessage{
+    font-size: 5rem;
+  }
+  .welcomeParagraph{
+    font-size: 1.5em;
+    line-height: 30px;
+  }
+  .textContainer{
+    margin: 0; padding: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .paragraphRow{
+    flex-direction: column;
+  }
+  .image{
+    width: 70%;
+    height: 70%;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .welcomeMessage{
+    font-size: 3em;
+    letter-spacing: -2px;
+  }
+
 }

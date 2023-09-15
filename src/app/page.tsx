@@ -5,41 +5,56 @@ import Image from 'next/image'
 import mac from '../../public/mac.png'
 import { useGlobalLanguage } from './context/LanguageContext'
 
+interface content {
+  welcomeMessage : string,
+  description : string[]
+}
+interface lang {
+  es : content,
+  en : content
+}
+
+const content : lang = {
+  es :  {
+    welcomeMessage : '¡Bienvenido!',
+    description : [
+      'Soy Daniel Ramírez.😎',
+      'Ingeniero en sistemas apasionado en el desarrollo y la programación radicando en el estado de Veracruz. 💻',
+      'Bienvenido a mi pequeño portafolio. ¡Siéntete libre de echar un vistazo y contactarme!'
+    ]
+  },
+  en :  {
+    welcomeMessage : 'Welcome!',
+    description : [`I'm Daniel Ramírez.😎`,
+    'Computer systems engineer in love with development and programming, living in Veacruz state, MX. 💻',
+    'Welcome to my little portfolio. Feel free to take a look around and contact me!'
+    ]
+  }
+}
+
 export default function Home() {
   const {language} = useGlobalLanguage()
-
   return (
     <main className={homeStyles.container}>
       <section className={homeStyles.textContainer}>
-        {language==='EN' ? WelcomeMessageEN : WelcomeMessageES}
-      <section className={homeStyles.paragraphRow}>
-      {language==='EN' ? descriptionEN : descriptionES}
-        <Image
-          src={mac}
-          alt='mac computer home page'
-          className={homeStyles.image}
-        />
-      </section>
+        <span className={homeStyles.welcomeMessage + ' title-decorated title-white'}>
+          {language==='EN' ? content.en.welcomeMessage : content.es.welcomeMessage}
+        </span>
+
+        <section className={homeStyles.paragraphRow}>
+          <p className={homeStyles.welcomeParagraph}>
+          { language==='EN'?
+            content.en.description.map( element => (<> {element} <br/></>)) :
+            content.es.description.map( element => (<> {element} <br/></>)) 
+          }
+          </p>
+          <Image
+            src={mac}
+            alt='mac computer home page'
+            className={homeStyles.image}
+          />
+        </section>
       </section>
     </main>
   )
 }
-
-// languages
-
-const descriptionES = 
-<p className={homeStyles.welcomeParagraph}>
-  Soy Daniel Ramírez.😎 <br/> 
-  Ingeniero en sistemas apasionado en el desarrollo y la programación radicando en el estado de Veracruz. 💻 <br/> 
-  Bienvenido a mi pequeño portafolio. ¡Siéntete libre de echar un vistazo y contactarme!
-</p>
-
-const descriptionEN = 
-<p className={homeStyles.welcomeParagraph}>
-  I'm Daniel Ramírez.😎 <br/> 
-  Computer systems engineer in love with development and programming, living in Veacruz state, MX. 💻 <br/> 
-  Welcome to my little portfolio. Feel free to take a look around and contact me! 
-</p>
-
-const WelcomeMessageES = <span className='title-decorated title-white title-huge'>¡Bienvenido!</span>
-const WelcomeMessageEN = <span className='title-decorated title-white title-huge'>Welcome!</span>

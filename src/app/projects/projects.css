@@ -4,16 +4,175 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 90%;
   max-width: 1200px;
+}
+
+.projects-title{ 
+  font-size: 4.5rem;
+  letter-spacing: -3px;
 }
 
 .card{
   width: 48%;
   height: 400px;
   margin:1%;
-  outline: 1px solid red;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.5em;
+  box-shadow:  0px 0px 15px rgba(149, 157, 165, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.inside-card{
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.90);;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  top:85%;
+  transition: all 0.25s ease-in-out;
+  color: white;
+}
+
+.card:hover > .inside-card {
+  top:30%;
+  background-color: rgba(0, 0, 0, 0.80);
+}
+
+/* CARD LAYOUT */
+.inside-card > .card-name{
+  text-align: center;
+  font-size: 1.5em;
+  /* height: 60px; */
+}
+.inside-card > * {
+  padding: 10px;
+}
+.card-element-container{
+  display: flex;
+  gap: .8em;
+}
+/* CARD LAYOUT */
+
+/* START inside card elements */
+.card-tag{
+  outline: 2px solid var(--light-green);
+  color: var(--light-green);
+  padding: 2px 10px;
+  border-radius: 20px;
+  cursor: default;
+  font-size: 0.8em;
+}
+.button{
+  border: none;
+  color: var(--dark-green);
+  background-color: var(--light-green);
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.button:hover{
+  background-color: var(--dark-green);
+  color: var(--light-green);
+}
+/* END inside card elements */
+
+/* START INFO MODAL WRAPPER */
+.modal-wrapper{
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.80);
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+.modal-open{ display: flex;}
+.modal-closed{ display: none;}
+.more-window{
+  position: relative;
+  width: 50%;
+  min-width: 600px;
+  max-width: 700px;
+  background-color: var(--dark-green);
+  color: white;
+  animation-name: slide;
+  animation-duration: 0.4s;
+  padding:1em 1.5em;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* ----Animation */
+@keyframes slide {
+  from {right:-100%; opacity:0} 
+  to {right:0; opacity:1}
+}
+
+@-webkit-keyframes slide {
+  from {right:-100%; opacity:0} 
+  to {right:0; opacity:1}
+}
+/* END INFO MODAL WRAPPER */
+
+
+/* START MODAL CONTENT STYLES */
+.more-window > * {
+  padding: 5px;
+}
+.more-window > p{
+  width: 100%;
+}
+.modal-image-caption{
+  font-size: .9em;
+  text-align: center;
+  padding: 0px;
+}
+.modal-image-container{
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  height: 350px;
+  margin-top:10px
+}
+.floating-button{
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin:0;
+  position: fixed;
+  background-color: var(--deep-blue);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.floating-button:hover{
+  background-color: white;
+  color: var(--deep-blue);
+}
+/* END MODAL CONTENT STYLES */
+
+@media screen and (max-width : 1250px) {
+  .inside-card > .card-name{
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .projects-title{ 
+    font-size: 4rem;
+  }
 }
 
 @media screen and (max-width : 960px) {
@@ -24,12 +183,27 @@
   .card{
     width: 576px;
   }
+  .inside-card > .card-name{
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .projects-title{ 
+    font-size: 3.5rem;
+  }
+  .more-window{
+    width: 100%;
+    min-width: auto;
+    max-width: auto;
+  }
 }
 
 @media screen and (max-width : 600px) {
   .card{
     width: 400px;
   }
+  .projects-title{ 
+    font-size: 3rem;
+  }  
 }
 
 @media screen and (max-width : 500px) {
@@ -38,5 +212,8 @@
   }
   .card{
     width: 100%;
+  }
+  .projects-title{ 
+    font-size: 2rem;
   }
 }
