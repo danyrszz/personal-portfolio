@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
+import { useState } from 'react';
 import '../projects.css'
-import Image from 'next/image'
+import 'material-icons/iconfont/filled.css';
 import Tag from './Tag'
 import Button from './Button'
 import { useGlobalLanguage } from '@/app/context/LanguageContext'
@@ -17,34 +18,20 @@ interface propsType {
   showModal( modalInfo : string[][]) : void
 }
 
-const info:string[][]=[
-  ['title', 'text title here'],
-  ['text','all text content here omfg.'],
-  ['text','more text come on motherfucker.'],
-  ['subtitle','title example'],
-  ['image','url'],
-  ['caption','this is caption']
-]
-
 export default function Card (props:propsType) {
 
   const {language} = useGlobalLanguage()
+  const [insideCard, setInsideCard] = useState<boolean>(false)
 
   const liveSiteButton : string = language==='EN' ?  'Live Site' : 'Ir a sitio'
   const moreButton : string = language==='EN' ?  'More...' : 'Más...'
 
   return (
-    <div className='card'>
+    <div className='card' style={{backgroundImage:`url(${props.imageURL})`, backgroundSize:'cover'}}>
 
-      <Image 
-        alt='screenshot'
-        src = {props.imageURL}
-        style={{objectFit: "cover"}}
-        fill={true}
-      />
+      <div className={`inside-card inside-card-${ insideCard ? 'enabled' : 'disabled' }`} >
 
-      <div className="inside-card">
-        <span className='card-name'>{props.name}</span>
+        <span className='card-name' onClick={()=>setInsideCard(!insideCard)} > {props.name} </span>
         <div className="card-element-container">
           {props.tags.map(element => <Tag name={element}/>)}
         </div>
@@ -60,8 +47,8 @@ export default function Card (props:propsType) {
           />
           {props.more && <button className='button' onClick={()=>props.showModal(props.more!)}>{moreButton}</button> }   
         </div>
+        <span className="material-icons close-arrow" onClick={()=>setInsideCard(!insideCard)} >arrow_drop_down</span>
       </div>
     </div>
   )
 }
-

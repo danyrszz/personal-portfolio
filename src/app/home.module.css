@@ -69,8 +69,12 @@
 
 @media screen and (max-width:550px) {
   .welcomeMessage{
-    font-size: 3em;
+    font-size: 2.8em;
     letter-spacing: -2px;
   }
+  .welcomeParagraph{
+    font-size: 1.2em;
+  }
+  
 
 }
