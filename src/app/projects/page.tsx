@@ -25,7 +25,6 @@ export default function Projects() {
   function getCards (data : Projects[]) : React.ReactNode{
     return data.map((element)=>{
       const imageUrl : string = `/screenshots/${element.id}.png`
-      console.log(element.more)
       return(
         <Card 
           name={element.name}
