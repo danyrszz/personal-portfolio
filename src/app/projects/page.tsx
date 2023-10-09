@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useGlobalLanguage } from '../context/LanguageContext'
 import Card from './components/Card'
 import MoreInfo from './components/MoreInfo'
+import Footer from '../components/Footer'
+import 'material-icons/iconfont/filled.css';
 //type
 import { Projects } from './projects'
 import { projectsEN, projectsES } from './projects'
@@ -42,15 +44,20 @@ export default function Projects() {
 
   return (
     <>
-      <div className='projects-title title-white title-decorated title-centered bg-deep-blue'> {language === 'EN' ? titleEn : titleEs} </div>
+      <div className='common-title title-white title-decorated title-centered bg-deep-blue'> {language === 'EN' ? titleEn : titleEs} </div>
       <section className="projects-container">
-      {language==='EN' ? getCards(projectsEN) : getCards(projectsES)}
+        {language==='EN' ? getCards(projectsEN) : getCards(projectsES)}
       </section>
       <MoreInfo 
         visible = {showMore}
         close = {close}
         info = {modalInfo}
       />
+
+      <div className={`floating-button button-up ${showMore? 'button-up-disabled':''}`} onClick={()=>document.body.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>
+        <span className='material-icons'>keyboard_double_arrow_up</span>
+      </div>
+      <Footer />
     </>
   )
 }

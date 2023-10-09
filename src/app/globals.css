@@ -3,6 +3,7 @@
 
   /*CUSTOM COLOR PALETTE*/
   --deep-blue: #071952;
+  --deep-blue-transparent: #071952bf;
   --dark-green : #0B666A;
   --medium-green : #35A29F;
   --light-green : #97FEED;
@@ -59,3 +60,31 @@ a {
   background-color: var(--deep-blue);
 }
 
+/* COMMON STYLES */
+.common-title{
+  font-size: 4.3rem;
+  letter-spacing: -3px;
+}
+/* DESKTOP */
+@media screen and (max-width : 1250px) {
+  .common-title{ 
+    font-size: 4rem;
+  }
+}
+/* TABLET */
+@media screen and (max-width : 960px) {
+  .common-title{ 
+    font-size: 3.5rem;
+  }
+}
+/* MOBILE */
+@media screen and (max-width : 600px) {
+  .common-title{ 
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width : 500px) {
+  .common-title{ 
+    font-size: 2rem;
+  }
+}

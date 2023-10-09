@@ -1,0 +1,17 @@
+.common-footer{
+  background-color: var(--deep-blue);
+  color: #fff;
+  margin-top:auto;
+  padding: 20px;
+  font-size: 0.85em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.common-footer a{
+  color: var(--light-green);
+}
+.footer-column{
+  text-align: center;
+}

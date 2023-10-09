@@ -69,9 +69,6 @@
     transition: all 0.3s ease-in-out;
     overflow: hidden;
   }
-  .mobile-close{
-    padding: 0;
-  }
   .mobile-nav-on{
     transform: translateX(0%);
   }
@@ -96,5 +93,8 @@
   }
   .burger-menu{ 
     display: block;
+  }
+  .mobile-close{
+    padding: 0;
   }
 }

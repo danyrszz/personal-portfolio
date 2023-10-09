@@ -22,7 +22,6 @@ export default function NavBar(){
 
     <div className={`nav-container mobile-nav ${navBarVisible? 'mobile-nav-on':'mobile-nav-off'}`} >
 
-        {/* <section className="mobile-close burger-menu nav-container"> kajsdkjksad </section> */}
         <div className='mobile-close burger-menu nav-container' onClick={()=>setNavBarVisible(!navBarVisible)}>
           <span className='material-icons'>close</span>
         </div>

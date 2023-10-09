@@ -1,4 +1,3 @@
-import Image from "next/image"
 import 'material-icons/iconfont/filled.css';
 import React from "react";
 
@@ -13,12 +12,7 @@ const CONTENT_TYPE = {
   text : (content : string) => <p>{content}</p>,
   image : (content : string) => (
     <div className="modal-image-container">
-      <Image 
-      alt='image'
-      src = {content}
-      fill = {true}
-      objectFit='contain'
-      />
+      <img src={content} alt='app-screenshot' />
     </div>
   ),
   caption : (content : string) => <p className="modal-image-caption">{content}</p>,

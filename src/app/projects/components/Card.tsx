@@ -27,10 +27,13 @@ export default function Card (props:propsType) {
   const moreButton : string = language==='EN' ?  'More...' : 'Más...'
 
   return (
-    <div className='card' style={{backgroundImage:`url(${props.imageURL})`, backgroundSize:'cover'}}>
+    <div 
+      className='card' 
+      style={{backgroundImage:`url(${props.imageURL})`, backgroundSize:'cover'}} 
+      onClick={()=>setInsideCard(!insideCard)}
+    >
 
       <div className={`inside-card inside-card-${ insideCard ? 'enabled' : 'disabled' }`} >
-
         <span className='card-name' onClick={()=>setInsideCard(!insideCard)} > {props.name} </span>
         <div className="card-element-container">
           {props.tags.map(element => <Tag name={element}/>)}
@@ -49,6 +52,7 @@ export default function Card (props:propsType) {
         </div>
         <span className="material-icons close-arrow" onClick={()=>setInsideCard(!insideCard)} >arrow_drop_down</span>
       </div>
+
     </div>
   )
 }
