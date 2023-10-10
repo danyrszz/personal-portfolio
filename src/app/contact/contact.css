@@ -53,7 +53,19 @@
   font-size: 0.8em;
   color: grey;
 }
-
+.confirmation-message{
+  text-align: center;
+  padding: 10px;
+}
+.confirmation-image{
+  margin-top:10px;
+  max-width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0px grey;
+}
+.confirmation-message > div > h1{
+  font-size: 2.2em;
+}
 
 @media screen and (max-width:600px) {
   .contact-form input, .contact-form textarea{

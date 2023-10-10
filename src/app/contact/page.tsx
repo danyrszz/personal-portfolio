@@ -1,6 +1,8 @@
 'use client'
 import './contact.css'
 import Footer from '../components/Footer'
+import ContactForm from './ContactForm'
+import EmailConfirm from './EmailConfirm'
 import { useGlobalLanguage } from '../context/LanguageContext'
 import { useState } from 'react';
 
@@ -11,6 +13,7 @@ export default function Contact() {
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
+  const [emailSent, setEmailSent] = useState<boolean>(false)
 
   function sendEmail (e : React.SyntheticEvent) {
     e.preventDefault()
@@ -21,18 +24,17 @@ export default function Contact() {
     <>
     <div className='common-title title-white title-decorated title-centered bg-deep-blue'> {langSelector('Reach me out.','Contáctame.')} </div>
     <section className='contact-main'>
-      test
-      <div className='form-container'>
-        <form name='email-contact' className='contact-form' onSubmit={e=>sendEmail(e)}>
-          <label form="email-contact"> <input type="text" name="name" value={name} onChange={ e=> setName(e.target.value)}  placeholder={langSelector('Your name', 'Tu nombre')} required /> </label> 
-          <label form="email-contact"> <input type="email" name="email" value={email} onChange={e=> setEmail(e.target.value)} placeholder={langSelector('yourmail@domain.com', 'tucorreo@dominio.com')} required/> </label> 
-          <label form="email-contact"> <textarea name="message" value={message} onChange={e=> setMessage(e.target.value)} placeholder={langSelector('Tell me something', 'Cuéntame lo que necesitas')} required></textarea> </label>
-          <span className='info-tag'>
-            {langSelector('*All fields required', '*Todos los campos son requeridos')}
-          </span>
-          <label form="email-contact" className='submit-lbl'> <input type="submit" value={langSelector('Send', 'Enviar')}/> </label>
-        </form>
-      </div>
+      {!emailSent && 
+        <ContactForm 
+          name = {name}
+          email = {email}
+          message = {message}
+          setName = {setName}
+          setEmail = {setEmail}
+          setMessage = {setMessage}
+          sendEmail = {sendEmail} /> ||
+        <EmailConfirm />
+      }
     </section>
     <Footer/>
     </>
