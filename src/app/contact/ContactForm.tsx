@@ -1,27 +1,35 @@
-import React from 'react'
+
+import React, {useRef} from 'react'
 import '../contact/contact.css'
 import { useGlobalLanguage } from '../context/LanguageContext'
+import emailjs from '@emailjs/browser';
 
-interface contactProps {
-  name : string,
-  email : string,
-  message : string,
-  setName : Function,
-  setEmail : Function,
-  setMessage : Function,
-  sendEmail : Function
-}
+interface contactProps {setEmailSent : Function}
 
-function ContactForm({name, email, message, setName, setEmail, setMessage, sendEmail} : contactProps) {
+function ContactForm({setEmailSent} : contactProps) {
+  
+  const form = useRef<any>()
   const {language} = useGlobalLanguage();
   const langSelector = (a : string, b : string) => language==='EN' ? a : b
 
+  async function sendEmail (e : React.SyntheticEvent) {
+    e.preventDefault()
+    const response = await emailjs.sendForm('service_zg1rkys', 'template_aop493t', form.current, 'vnRNacXRndOgMysFO')
+    console.log(response)
+    if(response.status === 200) {
+      setEmailSent(true)
+    }else{
+      alert("El email no pudo ser enviado, intenta nuevamente.")
+    }
+    setEmailSent(true)
+  }
+  
   return (
     <div className='form-container'>
-      <form name='email-contact' className='contact-form' onSubmit={e=>sendEmail(e)}>
-        <label form="email-contact"> <input type="text" name="name" value={name} onChange={ e=> setName(e.target.value)}  placeholder={langSelector('Your name', 'Tu nombre')} required /> </label> 
-        <label form="email-contact"> <input type="email" name="email" value={email} onChange={e=> setEmail(e.target.value)} placeholder={langSelector('yourmail@domain.com', 'tucorreo@dominio.com')} required/> </label> 
-        <label form="email-contact"> <textarea name="message" value={message} onChange={e=> setMessage(e.target.value)} placeholder={langSelector('Tell me something', 'Cuéntame lo que necesitas')} required></textarea> </label>
+      <form ref={form} id='email-contact' className='contact-form' onSubmit={e=>sendEmail(e)}>
+        <label form="email-contact"> <input type="text" name="name" placeholder={langSelector('Your name', 'Tu nombre')} required /> </label> 
+        <label form="email-contact"> <input type="email" name="email" placeholder={langSelector('yourmail@domain.com', 'tucorreo@dominio.com')} required/> </label> 
+        <label form="email-contact"> <textarea name="message" placeholder={langSelector('Tell me something', 'Cuéntame lo que necesitas')} required></textarea> </label>
         <span className='info-tag'>
           {langSelector('*All fields required', '*Todos los campos son requeridos')}
         </span>
