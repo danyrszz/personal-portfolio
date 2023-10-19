@@ -7,7 +7,7 @@ const Footer = () => {
 
       <div className="footer-column">
         <p>Hecho con 💚 usando React con Typescript.</p>
-        <p>Este sitio usa algunos <a href='https://marella.me/material-icons/'>Material Icons</a> y el servicio de <a href='https://formsubmit.co/'>Form Submit. </a>Creado por Daniel Ramírez.</p>
+        <p>Este sitio usa algunos <a href='https://marella.me/material-icons/'>Material Icons</a> y el servicio de <a href='https://www.emailjs.com/'>EmailJS. </a>Creado por Daniel Ramírez.</p>
       </div>
     
     </footer>

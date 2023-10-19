@@ -61,7 +61,7 @@ const projectsES : Projects[] = [
       ['image','/blog-img/2/asset.png'],
       ['title','Un poco más...'],
       ['text','Esta app esta hecha para gestionar solo un auto. Esto fue hecho así a propósito desde el diseño y desarrollo de la app. Hay dos razones principales:'],
-      ['text','Uno: Quise mantener las cosas sencillas debido a que solamente tengo una unidad de taxi trabajando y solo una (al menos por ahora), así que necesitaba terminar este desarrollo rápidamente para poder comenzar a llevar a cabo el registro de mi información.'],
+      ['text','Uno: Quise mantener las cosas sencillas debido a que solamente tengo una unidad de taxi trabajando y solo una, así que necesitaba terminar este desarrollo rápidamente para poder comenzar a llevar a cabo el registro de mi información.'],
       ['text',`Segundo: Quise motivarme a utilizar tecnologías que no había usado antes. Como puedes ver en mis proyectos más abajo, principalmente había estado practicando el desarrollo frontend, usando algo de JS básico, HTML y CSS. Entonces quería practicar un poco más de react y entender mejor algunos conceptos para aplicarlos en este proyecto.`],
       ['text', `Asímismo esta es una aplicación fullstack terminada y desplegada, así que no solo tuve que codear el frontend, sino también el backend en Node conectándome a un cluster de MongoDb, y aprender un poco más de ambos mundos. `]
     ]
@@ -188,7 +188,7 @@ const projectsEN : Projects[] = [
       ['image','/blog-img/2/asset.png'],
       ['title','A little more...'],
       ['text','This app can handle just one single car. This was on purpose, I had this in mind when I designed and developed the system. There were two main reasons: '],
-      ['text','One: I wanted to keep this as simple as possible because I was only having one single taxi working and no more than one (at least for now), therefore I needed this to be quickly completed to start keeping track of my information.'],
+      ['text','One: I wanted to keep this as simple as possible because I was only having one single taxi working and no more than one, therefore I needed this to be quickly completed to start keeping track of my information.'],
       ['text',`Second: I wanted to push myself to work with technologies that I didn't work with in the past. For example: I've been, as you can see in my projects below, practicing frontend skills with some basic javascript and more HTML and CSS. I wanted to pratice a little bit more of react and understand more concepts to apply on this project.`],
       ['text', `Aswell, this is a fully developed and deployed fullstack app, so I had to code not only the frontend and the responsive view of the page, but write the backend on node connected to a mongodb cluster, and learn a bit of both worlds. `]
     ]

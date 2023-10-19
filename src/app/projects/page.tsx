@@ -28,7 +28,8 @@ export default function Projects() {
     return data.map((element)=>{
       const imageUrl : string = `/screenshots/${element.id}.png`
       return(
-        <Card 
+        <Card
+          key = {element.id}
           name={element.name}
           tags={element.tags}
           imageURL={imageUrl}
