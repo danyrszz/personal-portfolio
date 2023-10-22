@@ -1,14 +1,12 @@
 .contact-main{
-  background-color: white;
-  color: black;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 600;
-  height: 100%;
   padding: 20px 0;
 }
+
 .form-container{
   width: 80%;
   max-width: 800px;
@@ -49,6 +47,13 @@
   box-shadow: 0 0 15px -8px var(--dark-green);
   background-color: #fff;
 }
+.contact-form input[type=submit]:disabled {
+  pointer-events: none;
+  background: #dddddd;
+  color:black;
+  box-shadow: none;
+  border: none;
+}
 .info-tag{
   font-size: 0.8em;
   color: grey;
@@ -62,6 +67,15 @@
   max-width: 380px;
   border-radius: 10px;
   box-shadow: 0 0 5px 0px grey;
+}
+.form-go-back{
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--medium-green) ;
+}
+.form-go-back:hover{
+  color: var(--dark-green);
 }
 .confirmation-message > div > h1{
   font-size: 2.2em;

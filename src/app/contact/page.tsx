@@ -15,7 +15,7 @@ export default function Contact() {
     <>
     <div className='common-title title-white title-decorated title-centered bg-deep-blue'> {langSelector('Reach me out.','Contáctame.')} </div>
     <section className='contact-main'>
-      { !emailSent && <ContactForm setEmailSent = {setEmailSent} /> || <EmailConfirm /> }
+      { !emailSent && <ContactForm setEmailSent = {setEmailSent} /> || <EmailConfirm setEmailSent = {setEmailSent} /> }
     </section>
     <Footer/>
     </>
