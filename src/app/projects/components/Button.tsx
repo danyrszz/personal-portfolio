@@ -7,14 +7,10 @@ interface ButtonInterface {
 
 function Button(props : ButtonInterface) {
 
-  function click() : void{
-    //on its way...
-  }
-
   return (
     <div className='button'>
       {props.URL != null ? 
-        <a href={props.URL}>
+        <a href={props.URL} rel="noopener noreferrer" target="_blank">
           {props .title}
         </a>
       : 

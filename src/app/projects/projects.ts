@@ -73,6 +73,20 @@ const projectsES : Projects[] = [
     tags : ['React', 'CSS', 'APIs'],
     siteURL : 'https://danyrszz.github.io/weather-app-reactjs/',
     githubURL : 'https://github.com/danyrszz/weather-app-reactjs',
+    more : [
+      ['title', 'App de Clima' ],
+      ['text','Esta una single-page app desarrollada con react. Se trata de un frontend que consume información de una API de clima, mostrándola en una interfaz agradable al usuario.'],
+      ['subtitle','Barra lateral principal.'],
+      ['text','En este apartado se muestra la información del clima de hoy (ícono de clima, temperatura, real feel, fecha y ubicación).'],
+      ['subtitle','Barra lateral de búsqueda.'],
+      ['text','Te permite buscar la ubicación que tu quieras para mostrar su información, o bien seleccionar la ubicación actual del dispositivo.'],
+      ['subtitle','Barra de escala.'],
+      ['text','Puedes cambiar entre grados centígrados o fahrenheit.'],
+      ['subtitle','Clima semanal.'],
+      ['text','Muestra la información del clima de los próximos seis días.'],
+      ['subtitle','Highlights.'],
+      ['text','Muestra información de viento, humedad, nubosidad y presión del aire.'],
+    ]
   },
   {
     id : 4,
@@ -81,6 +95,12 @@ const projectsES : Projects[] = [
     tags : ['React', 'CSS', 'APIs'],
     siteURL : 'https://danyrszz.github.io/country-quiz-react/',
     githubURL : 'https://github.com/danyrszz/country-quiz-react',
+    more : [
+      ['title', 'Country Quiz'],
+      ['text', `Es un pequeño juego de preguntas de opción multiple. Funciona usando los datos de una API de países.`],
+      ['text', `Tienes tres vidas. Tu puntuación se incrementa conforme respondes preguntas correctas, si te equivocas se te resta una vida. Tres errores y estás fuera.`],
+      ['text', `¡Diviértete!`]
+    ]
   },
   {
     id : 5,
@@ -89,6 +109,13 @@ const projectsES : Projects[] = [
     tags : ['React', 'CSS'],
     siteURL : 'https://danyrszz.github.io/windbnb-reactJS-devchallenges/',
     githubURL : 'https://github.com/danyrszz/windbnb-reactJS-devchallenges',
+    more : [
+      ['title', `Windbnb`],
+      ['text','Este reto estaba disponible en el sitio devchallenges.'],
+      ['text',`Se trata de un clon de la interfaz de airbnb con un poco de funcionalidad. Hay algunos "alojamientos" de los cuales puedes filtrar por ubicación y número de huéspedes.`],
+      ['text',`Algo simple pero un reto divertido para practicar algo de CSS y JS`],
+    ]
+
   },
   {
     id : 6,
@@ -200,6 +227,21 @@ const projectsEN : Projects[] = [
     tags : ['React', 'CSS', 'APIs'],
     siteURL : 'https://danyrszz.github.io/weather-app-reactjs/',
     githubURL : 'https://github.com/danyrszz/weather-app-reactjs',
+    more : [
+      ['title', 'Weather App' ],
+      ['text',`This is a single-page app developed with react. A weather API provides the information that this frontend consumes, displaying it on a nice user interface.`],
+      ['subtitle','Main sidebar.'],
+      ['text',`This sidebar shows information of today's weather, such as temperature icon, real feel, date and location`],
+      ['subtitle','Search sidebar.'],
+      ['text',`Allows you to search any location you want, also you can select your current device location.`],
+      ['subtitle','Scalebar.'],
+      ['text','You can choose either celsius degrees or fahrenheit.'],
+      ['subtitle','Weekly weather.'],
+      ['text','Shows next six days weather information.'],
+      ['subtitle','Highlights.'],
+      ['text','Shows wind information, humidity, cloud and air pressure.'],
+    ]
+
   },
   {
     id : 4,
@@ -208,6 +250,12 @@ const projectsEN : Projects[] = [
     tags : ['React', 'CSS', 'APIs'],
     siteURL : 'https://danyrszz.github.io/country-quiz-react/',
     githubURL : 'https://github.com/danyrszz/country-quiz-react',
+    more : [
+      ['title', 'Country Quiz'],
+      ['text', `A little multiple-choice quiz game, powered by a country-information API.`],
+      ['text', `You have three lives, your score is updated as long as you don't make a mistake. If so, you lose a life. Three mistakes and you're out.`],
+      ['text', `Have fun!`]
+    ]
   },
   {
     id : 5,
@@ -216,6 +264,12 @@ const projectsEN : Projects[] = [
     tags : ['React', 'CSS'],
     siteURL : 'https://danyrszz.github.io/windbnb-reactJS-devchallenges/',
     githubURL : 'https://github.com/danyrszz/windbnb-reactJS-devchallenges',
+    more : [
+      ['title', `Windbnb`],
+      ['text','This was a challenge available on devchallenges website.'],
+      ['text',`It's a UI-clone of airbnb with a little functionality. There are some rentals and you are able to filter by location and number of guests.`],
+      ['text',`Quite simple but a good challenge to practice some css skills and a little of JS.`],
+    ]
   },
   {
     id : 6,
