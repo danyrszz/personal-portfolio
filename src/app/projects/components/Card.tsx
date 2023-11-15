@@ -36,7 +36,7 @@ export default function Card (props:propsType) {
       <div className={`inside-card inside-card-${ insideCard ? 'enabled' : 'disabled' }`} >
         <span className='card-name' onClick={()=>setInsideCard(!insideCard)} > {props.name} </span>
         <div className="card-element-container">
-          {props.tags.map(element => <Tag name={element}/>)}
+          {props.tags.map(element => <Tag name={element} key={element}/>)}
         </div>
         <p className='card-description'>{props.description}</p>
         <div className="card-element-container">
