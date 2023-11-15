@@ -8,7 +8,7 @@ interface ButtonInterface {
 function Button(props : ButtonInterface) {
 
   return (
-    <div className='button'>
+    <div className={props.URL? 'button' : 'button-disabled'}>
       {props.URL != null ? 
         <a href={props.URL} rel="noopener noreferrer" target="_blank">
           {props .title}
